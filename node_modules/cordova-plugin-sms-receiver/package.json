@@ -1,0 +1,83 @@
+{
+  "_from": "cordova-plugin-sms-receiver",
+  "_id": "cordova-plugin-sms-receiver@0.1.6",
+  "_inBundle": false,
+  "_integrity": "sha1-bet/3QYDEGMYgpzzuWBGQt0ixI0=",
+  "_location": "/cordova-plugin-sms-receiver",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-sms-receiver",
+    "name": "cordova-plugin-sms-receiver",
+    "escapedName": "cordova-plugin-sms-receiver",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-sms-receiver/-/cordova-plugin-sms-receiver-0.1.6.tgz",
+  "_shasum": "6deb7fdd0603106318829cf3b9604642dd22c48d",
+  "_spec": "cordova-plugin-sms-receiver",
+  "_where": "D:\\CordovaApp\\magichand_poc",
+  "author": {
+    "name": "Ratson"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/rehy/cordova-plugin-sms-receiver/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-sms-receiver",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova SMS Receiver Plugin",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "npm-run-all": "^3.1.2",
+    "rimraf": "^2.5.4",
+    "sync-package-version": "^0.0.3"
+  },
+  "files": [
+    "*.js",
+    "*.md",
+    "*.xml",
+    "LICENSE",
+    "src",
+    "www"
+  ],
+  "homepage": "https://github.com/rehy/cordova-plugin-sms-receiver#readme",
+  "keywords": [
+    "cordova",
+    "sms",
+    "receiver",
+    "ecosystem:cordova",
+    "cordova-android",
+    "plugin"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-sms-receiver",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehy/cordova-plugin-sms-receiver.git"
+  },
+  "scripts": {
+    "build": "babel src/js --out-dir www",
+    "clean": "rimraf www",
+    "prepublish": "npm-run-all clean build",
+    "version": "sync-package-version --cordova-plugin"
+  },
+  "version": "0.1.6"
+}

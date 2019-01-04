@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.magic.magic" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>AlucentX</name>
+    <description>
+        Alucent Controllers!
+    </description>
+    <author email="meddah.abdellah.spcx@gmail.com" href="http://cordova.io">
+        Meddah Abdellah
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <splash density="land-xxhdpi" src="www/img/splash.png" />
+        <splash density="land-hdpi" src="www/img/splash.png" />
+        <splash density="land-ldpi" src="www/img/splash.png" />
+        <splash density="land-mdpi" src="www/img/splash.png" />
+        <splash density="land-xhdpi" src="www/img/splash.png" />
+        <splash density="port-hdpi" src="www/img/splash.png" />
+        <splash density="port-ldpi" src="www/img/splash.png" />
+        <splash density="port-mdpi" src="www/img/splash.png" />
+        <splash density="port-xhdpi" src="www/img/splash.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="^7.0.0" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreenDelay" value="30000" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
+    <plugin name="cordova-call" spec="^1.1.6" />
+    <plugin name="cordova-plugin-ble-central" spec="^1.2.2" />
+    <plugin name="cordovarduino" spec="0.0.9" />
+    <plugin spec="https://github.com/subitolabs/cordova-gallery-api.git" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="cordova-plugin-photo-library" spec="^2.1.1">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="To choose photos" />
+    </plugin>
+    <plugin name="cordova-sms-plugin" spec="^0.1.13" />
+    <plugin name="cordova-plugin-sms-receive" spec="^1.0.1" />
+    <plugin name="cordova-plugin-speechrecognition" spec="^1.2.0" />
+    <plugin name="cordova-plugin-shell-exec" spec="^1.0.0" />
+    <plugin name="org.apache.cordova.shell-exec" spec="~1.0.0" />
+</widget>

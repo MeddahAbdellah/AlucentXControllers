@@ -1,0 +1,34 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.magic.magic"
+    },
+    "cordova-call": {
+      "PACKAGE_NAME": "com.magic.magic"
+    },
+    "cordova-plugin-photo-library": {
+      "PACKAGE_NAME": "com.magic.magic"
+    },
+    "cordova-plugin-sms-receiver": {
+      "PACKAGE_NAME": "com.magic.magic"
+    },
+    "cordova-plugin-speechrecognition": {
+      "PACKAGE_NAME": "com.magic.magic"
+    },
+    "org.apache.cordova.shell-exec": {
+      "PACKAGE_NAME": "com.magic.magic"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.magic.magic"
+    }
+  }
+}

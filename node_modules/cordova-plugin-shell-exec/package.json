@@ -1,0 +1,65 @@
+{
+  "_from": "cordova-plugin-shell-exec@^1.0.0",
+  "_id": "cordova-plugin-shell-exec@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-UwcmK4jdsXEYXka9hAbrbqlZ6O0=",
+  "_location": "/cordova-plugin-shell-exec",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-shell-exec@^1.0.0",
+    "name": "cordova-plugin-shell-exec",
+    "escapedName": "cordova-plugin-shell-exec",
+    "rawSpec": "^1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-shell-exec/-/cordova-plugin-shell-exec-1.0.0.tgz",
+  "_shasum": "5307262b88ddb171185e46bd8406eb6ea959e8ed",
+  "_spec": "cordova-plugin-shell-exec@^1.0.0",
+  "_where": "D:\\CordovaApp\\magichand_poc",
+  "author": {
+    "name": "Peter Vojtek"
+  },
+  "bugs": {
+    "url": "https://github.com/petervojtek/cordova-plugin-shell-exec/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-shell-exec",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Apache Cordova Execute Shell Command Plugin",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "homepage": "https://github.com/petervojtek/cordova-plugin-shell-exec",
+  "keywords": [
+    "exec",
+    "runtime",
+    "process",
+    "shell",
+    "console",
+    "command",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-shell-exec",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petervojtek/cordova-plugin-shell-exec.git"
+  },
+  "version": "1.0.0"
+}

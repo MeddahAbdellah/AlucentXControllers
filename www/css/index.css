@@ -1,0 +1,381 @@
+html,body{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.cursor1,.cursor2{
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  opacity: 0.6;
+  border-radius: 100%;
+  position: absolute;
+  z-index:10;
+  transition: 0.2s;
+  pointer-events: none;
+}
+.cursor2{
+  background: purple;
+}
+.clickBackground{
+  background: "#F44336";
+}
+.holdBackground{
+  background: "blue";
+}
+.longBackground{
+  background: "green";
+}
+.cursorShadow1,.cursorShadow2{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: grey;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.cursorShadow2{
+  background:green;
+}
+.appsWrapper{
+  position: absolute;
+  top:0;
+  width: 100vw;
+  height: 10vh;
+  left: 0;
+}
+.apps{
+  width: 100vw;
+  height: 10vh;
+  padding: 20px;
+  padding-right: 0;
+  padding-left: 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.phoneCallWrapper,.galleryWrapper,.smsWrapper{
+  position: absolute;
+  top:0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: hidden;
+}
+.smsWrapper{
+  width: 100vw;
+  height: 100vh;
+}
+.galleryWrapper{
+overflow-y: auto;
+}
+.phoneCallWrapper input{
+  width: 100vw;
+  border: none;
+  padding: 0px;
+  outline: none;
+  font-size: 2em;
+  font-family: helvetica;
+  text-align: center;
+  color: #37474F;
+}
+.phoneCallWrapper h1{
+  width: 100vw;
+  font-family: helvetica;
+  text-align: center;
+  color: #37474F;
+}
+.numberInput{
+  display: flex;
+  flex-flow: row;
+  width: 100vw;
+  position: relative;
+}
+.numbersRow{
+  width: 100vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+
+}
+
+
+
+.phoneCallWrapper button,.appsWrapper button{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background:#2ECC71;
+  border: none;
+  color: white;
+  font-size: 2em;
+  -webkit-box-shadow: -1px -1px 2px 1px rgba(0,0,0,0.47);
+  -moz-box-shadow: -1px -1px 2px 1px rgba(0,0,0,0.47);
+  box-shadow: -1px -1px 2px 1px rgba(0,0,0,0.47);
+  transition: 0.2s;
+  outline: none;
+}
+.phoneCallWrapper button{
+  background: #90A4AE;
+  margin: 20px;
+}
+button[name="startCall"]{
+  background: #2ECC71;
+}
+button[name="delete"]{
+  background:#2ECC71;
+  color: white;
+  border: none;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
+}
+
+button[name="delete"]:hover{
+  background: none;
+  color: #3498DB;
+}
+button[name="sms"]{
+  background: #03A9F4;
+}
+button[name="gallery"]{
+  background: #F4D03F;
+}
+button:hover{
+  background: #3498DB;
+}
+.hoveredButton{
+  background: blue !important;
+}
+.galleryHeader{
+height: 60px;
+min-height: 60px;
+width: 100%;
+background:#424242; /* default background for browsers without gradient support */
+/* css3 */
+background:-webkit-gradient(linear, 0 0, 0 100%, from(#424242), to(#212121));
+background:-moz-linear-gradient(#424242, #212121);
+background:-o-linear-gradient(#424242, #212121);
+background:linear-gradient(#424242, #212121);
+border-bottom: 1px ridge grey;
+margin-bottom: 2px;
+ color: #F5F5F5;
+ display: flex;
+ flex-flow: row;
+ font-size: 1.1em;
+ font-family: helvetica;
+ align-items: center;
+}
+.galleryHeader i{
+  margin: 15px;
+  margin-left: 20px;
+}
+.galleryImages{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+.galleryComponent{
+  min-width: 80px;
+  min-height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  margin: 1px;
+  padding: 0px;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  overflow: hidden;
+
+}
+.galleryComponent img{
+  width: 100%;
+  height: 100%;
+}
+.galleryImages a{
+  width: 100vw;
+  padding: 25px;
+  padding-right: 20px;
+  color: grey;
+  text-decoration: none;
+  font-family: helvetica;
+  font-size: 1.1em;
+  border-bottom: 1px solid grey;
+}
+.imgDescription{
+  position: absolute;
+  width: 100%;
+  padding-left: 4px;
+  bottom: 0;
+  z-index: 2;
+  background: #FAFAFA;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: helvetica;
+  opacity: 0.7;
+}
+.imgDisplay{
+  height: 100%;
+  width: 100vw;
+  background: black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  transition: transform .2s; /* Animation */
+  align-items: center;
+}
+.imgDisplay img {max-width:100%; height:auto}
+.texts{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x:hidden;
+  width: 100vw;
+  background: #EAEDED ;
+}
+.speech-bubble {
+	position: relative;
+	background: #00aabb;
+	border-radius: .4em;
+  width: 50%;
+  margin: 5px;
+  margin-left:20px;
+  margin-right:20px;
+  color: white;
+  padding: 2px;
+  padding-left: 5px;
+  font-size: 1.1em;
+  font-family: helvetica;
+  background-image: linear-gradient(to top, #cfd9df 0%, #AEB6BF 100%);
+}
+
+.messageRecieved .speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.813em solid transparent;
+	border-right-color: #AEB6BF;
+	border-left: 0;
+	margin-top: -0.812em;
+	margin-left: -0.812em;
+
+}
+.messageSent{
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+}
+.messageSent .speech-bubble{
+background-image: linear-gradient(to top, #5DADE2  0%, #3498DB   100%);
+}
+.messageSent .speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.813em solid transparent;
+	border-left-color: #3498DB;
+	border-right: 0;
+  margin-top: -0.812em;
+	margin-right: -0.812em;
+}
+.smsText{
+  width: 100vw;
+  position: relative;
+}
+.smsKeyBoard{
+
+}
+input[name="smsInput"],input[name="phoneSmsInput"]{
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  font-size: 1.1em;
+  font-family: helvetica;
+  border: none;
+  background: #FBFCFC ;
+}
+input[name="phoneSmsInput"]{
+  margin: -2px;
+  padding-left: 30px;
+}
+button[name="sendSms"]{
+  position: absolute;
+  color: white;
+  right: 0;
+  height: 100%;
+  border: none;
+  background: grey;
+  top: 0;
+  width: auto;
+  font-size: 0.8em;
+  min-width: 70px;
+  border-radius: 0;
+  margin-right: 2px;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
+  margin-right: -1px;
+}
+.smsKeyBoard{
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 100vh;
+  transition: 0.5s;
+  background: #E0E0E0;
+}
+.smsKeyBoardRow{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.smsKeyBoardRow button{
+  background: white;
+  color: black;
+  border-radius: 2px;
+  border:none;
+  margin: 2px;
+  font-family: helvetica;
+  width: 10%;
+  font-size: 1.1em;
+  height: 32px;
+
+}
+button[name="smsKeyBoardSpaceButton"]
+{
+  width: 80%;
+}
+.lockScreen{
+  width:100vw;
+  height: 100vh;
+  background: black;
+  color: white;
+  font-family: helvetica;
+  z-index: 999;
+}
+.lockScreen h1{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.lockScreen h1 span{
+  font-size: 1.5em;
+}

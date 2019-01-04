@@ -1,0 +1,60 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-call": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-call"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-photo-library": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-photo-library"
+    },
+    "is_top_level": true,
+    "variables": {
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": "To choose photos"
+    }
+  },
+  "cordova-plugin-file": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file@^5.0.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-sms-receiver": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-sms-receiver@^0.1.6"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-speechrecognition": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-speechrecognition"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "org.apache.cordova.shell-exec": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-shell-exec@^1.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

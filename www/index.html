@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <title>Call</title>
+    </head>
+    <body>
+      <div class="lockScreen">
+        <h1>ALUCENT <span>X</span></h1>
+      </div>
+      <div class="cursor1">
+
+      </div>
+      <div class="cursor2">
+
+      </div>
+      <div class="cursorShadow1">
+
+      </div>
+      <div class="cursorShadow2">
+
+      </div>
+      <div class="appsWrapper">
+        <div class="apps">
+          <button type="button" name="call"><i class="fas fa-phone"></i></button>
+          <button type="button" name="sms"><i class="fas fa-comment-alt"></i></button>
+          <button type="button" name="gallery"><i class="fas fa-images"></i></button>
+        </div>
+        <p></p>
+        <p id="cursorPosition"></p>
+        <p id="cursorClick"></p>
+      </div>
+      <div class="smsWrapper">
+        <div class="galleryHeader">
+          <i class="fas fa-arrow-left"></i> AlucentX SmS
+        </div>
+        <input type="number" name="phoneSmsInput" placeholder="TO : ">
+        <div class="texts">
+          <div class="messageRecieved">
+            <hgroup class="speech-bubble">
+              <p>message from someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+          <div class="messageSent">
+            <hgroup class="speech-bubble">
+              <p>message to someone</p>
+            </hgroup>
+          </div>
+
+        </div>
+        <div class="smsText">
+          <input type="text" name="smsInput" placeholder="Message">
+          <button type="button" name="sendSms"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="smsKeyBoard">
+          <div class="smsKeyBoardRow">
+            <button type="button" name="smsKeyBoardButton">1</button>
+            <button type="button" name="smsKeyBoardButton">2</button>
+            <button type="button" name="smsKeyBoardButton">3</button>
+            <button type="button" name="smsKeyBoardButton">4</button>
+            <button type="button" name="smsKeyBoardButton">5</button>
+            <button type="button" name="smsKeyBoardButton">6</button>
+            <button type="button" name="smsKeyBoardButton">7</button>
+            <button type="button" name="smsKeyBoardButton">8</button>
+            <button type="button" name="smsKeyBoardButton">9</button>
+            <button type="button" name="smsKeyBoardButton">0</button>
+          </div>
+          <div class="smsKeyBoardRow">
+            <button type="button" name="smsKeyBoardButton">q</button>
+            <button type="button" name="smsKeyBoardButton">w</button>
+            <button type="button" name="smsKeyBoardButton">e</button>
+            <button type="button" name="smsKeyBoardButton">r</button>
+            <button type="button" name="smsKeyBoardButton">t</button>
+            <button type="button" name="smsKeyBoardButton">y</button>
+            <button type="button" name="smsKeyBoardButton">u</button>
+            <button type="button" name="smsKeyBoardButton">i</button>
+            <button type="button" name="smsKeyBoardButton">o</button>
+            <button type="button" name="smsKeyBoardButton">p</button>
+          </div>
+          <div class="smsKeyBoardRow">
+            <button type="button" name="smsKeyBoardButton">a</button>
+            <button type="button" name="smsKeyBoardButton">s</button>
+            <button type="button" name="smsKeyBoardButton">d</button>
+            <button type="button" name="smsKeyBoardButton">f</button>
+            <button type="button" name="smsKeyBoardButton">g</button>
+            <button type="button" name="smsKeyBoardButton">h</button>
+            <button type="button" name="smsKeyBoardButton">j</button>
+            <button type="button" name="smsKeyBoardButton">k</button>
+            <button type="button" name="smsKeyBoardButton">l</button>
+          </div>
+          <div class="smsKeyBoardRow">
+            <button type="button" name="smsKeyBoardButton">z</button>
+            <button type="button" name="smsKeyBoardButton">x</button>
+            <button type="button" name="smsKeyBoardButton">c</button>
+            <button type="button" name="smsKeyBoardButton">v</button>
+            <button type="button" name="smsKeyBoardButton">b</button>
+            <button type="button" name="smsKeyBoardButton">n</button>
+            <button type="button" name="smsKeyBoardButton">m</button>
+          </div>
+          <div class="smsKeyBoardRow">
+            <button type="button" name="smsKeyBoardButton">+</button>
+            <button type="button" name="smsKeyBoardSpaceButton"><i class="fas fa-ellipsis-h"></i></button>
+            <button type="button" name="smsKeyBoardDeleteButton"><i class="fas fa-backspace"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="galleryWrapper">
+        <div class="galleryHeader">
+          <i class="fas fa-arrow-left"></i> AlucentX Gallery
+        </div>
+        <div class="galleryImages">
+
+        </div>
+      </div>
+
+      <div class="phoneCallWrapper">
+        <div class="galleryHeader">
+          <i class="fas fa-arrow-left"></i> AlucentX Phone
+        </div>
+        <div class="numberInput">
+          <input type="text" name="numberInput">
+        </div>
+        <div class="composeNumbers">
+          <div class="numbersRow">
+            <button type="button" name="phoneButton">1</button>
+            <button type="button" name="phoneButton">2</button>
+            <button type="button" name="phoneButton">3</button>
+          </div>
+          <div class="numbersRow">
+            <button type="button" name="phoneButton">4</button>
+            <button type="button" name="phoneButton">5</button>
+            <button type="button" name="phoneButton">6</button>
+          </div>
+          <div class="numbersRow">
+            <button type="button" name="phoneButton">7</button>
+            <button type="button" name="phoneButton">8</button>
+            <button type="button" name="phoneButton">9</button>
+          </div>
+          <div class="numbersRow">
+            <button type="button" name="phoneButton">*</button>
+            <button type="button" name="phoneButton">0</button>
+            <button type="button" name="phoneButton">#</button>
+          </div>
+          <div class="numbersRow">
+            <button type="button" name="phoneButton">+</button>
+            <button type="button" name="startCall"><i class="fas fa-phone"></i></button>
+            <button type="button" name="delete"><i class="fas fa-backspace"></i></button>
+          </div>
+        </div>
+      </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/velocity.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="js/jquery-collision.min.js"></script>
+        <script type="text/javascript" src="js/gallery.js"></script>
+        <script type="text/javascript" src="js/routing.js"></script>
+        <script type="text/javascript" src="js/phoneComposition.js"></script>
+        <script type="text/javascript" src="js/BLE.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
