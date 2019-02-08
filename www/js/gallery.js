@@ -33,7 +33,7 @@ window.loadAlbum = function(albumName)
         $("img").on("click",function(event){
           //get element index then * 100vw
           console.log($(this).index());
-          console.log($(this).index);
+          console.log($('img').index(this));
           showImage(event.target,imgDisplayHtml);
         })
 
@@ -46,7 +46,7 @@ function showImage(currentImg,html){
 $(".galleryImages").html( "" );
 $(".galleryImages").html('<div class="imgDisplay">' + html + '</div>' );
 console.log($(window).width());
-$(".gallerImages").scrollLeft($(window).width());
+$(".imgDisplay").scrollLeft($(window).width());
 localStorage.setItem("lastPage",".galleryWrapper");
 localStorage.setItem("currentPage",".imgWrapper");
 
