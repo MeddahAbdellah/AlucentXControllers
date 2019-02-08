@@ -20,7 +20,7 @@ window.loadAlbum = function(albumName)
     {
         var html = "";
 
-        for(var i = 0; i < 100; i++)
+        for(var i = 0; i < 20; i++)
         {
             var media = items[i];
 

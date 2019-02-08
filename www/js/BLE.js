@@ -47,29 +47,16 @@ function startBLE() {
 }, function() {
   alert("failed to scan");
 });
-  /*ble.scan([], 30, function(device) {
-      alert(device.name);
-      if(device.name=="resncid"){
-        ble.autoConnect(device.id,function(BleDevice){
-          connectedDevice=BleDevice;
-          collectDataWhenConnected(BleDevice);
-        },function(){alert("couldn't connect to Resncid BLE device");});
-      }else{
-        startBLE();
-      }
-    },function(error){
-      alert("Error : "+error);
-    });*/
 }
 
 function collectDataWhenConnected(BleDevice){
-//  console.log(BleDevice);
-//  console.log(bytesToString(BleDevice.advertising));
-       dataReader = setInterval(readBLE,10);
+  console.log(bytesToString(BleDevice.advertising));
+  ble.startNotification(connectedDevice.id, service_uuid,characteristic_uuid,function(dataRead){readBLEsuccess(dataRead)},readBLEfail(connectedDevice));
+       //dataReader = setInterval(readBLE,10);
 
 }
 function readBLE(){
-//console.log(connectedDevice.id);
+console.log(connectedDevice.id);
 ble.read(connectedDevice.id, service_uuid,characteristic_uuid,function(dataRead){readBLEsuccess(dataRead)},readBLEfail(connectedDevice));
 
 }
@@ -81,14 +68,14 @@ function writeBLE(data){
 }
 
 function readBLEsuccess(dataRead){
+  console.log("read called");
   showData(bytesToString(dataRead));
 }
 
 function readBLEfail(BleDevice){
 //  console.log("reconnectin ... ");
-
   ble.isConnected(BleDevice.id,function(){//console.log("connected");
-},function(){/*console.log("not connected");*/clearInterval(dataReader);});
+},function(){/*console.log("not connected");clearInterval(dataReader);*/});
 }
 
 /* END BLE communication */
@@ -331,8 +318,8 @@ function moveSpeakClickScroll(x,y,touch,cursor){
 }
 function checkHits(cursor,x,y){
   var hits=null;
-  if(cursor===".cursor1")hits = $(".cursorShadow1").collision("button,.fa-arrow-left,input,.galleryComponent img,a");
-  if(cursor===".cursor2")hits = $(".cursorShadow2").collision("button,.fa-arrow-left,input,.galleryComponent img,a");
+  if(cursor===".cursor1")hits = $(".cursorShadow1").collision("button,.fa-arrow-left,input,.galleryComponent img");
+  if(cursor===".cursor2")hits = $(".cursorShadow2").collision("button,.fa-arrow-left,input,.galleryComponent img");
   console.log(hits);
   if(hits.size() >=1){
     if(hits.size()>1)hits=hits[0];
