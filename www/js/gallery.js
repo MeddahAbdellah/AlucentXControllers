@@ -30,10 +30,10 @@ window.loadAlbum = function(albumName)
         }
 
         $(".galleryImages").html( html );
-        $("img").on("click",function(){
+        $("img").on("click",function(target){
           //get element index then * 100vw
 
-          showImage(this,imgDisplayHtml);
+          showImage(target,imgDisplayHtml);
         })
 
     }, function(error){alert(error);});
