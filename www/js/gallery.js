@@ -29,16 +29,14 @@ window.loadAlbum = function(albumName)
 
         $(".galleryImages").html( html );
         $("img").on("click",function(){
-          showImage($(this),media);
+          showImage($(this),html);
         })
 
     }, function(error){alert(error);});
 };
 }
 
-function showImage(currentImg,media){
-var html="";
-html += '<img src="'+media.thumbnail+'"></div>';
+function showImage(currentImg,html){
 
 $(".galleryImages").html( "" );
 $(".galleryImages").html( html );
