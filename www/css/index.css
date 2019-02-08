@@ -225,8 +225,10 @@ margin-bottom: 2px;
 .imgDisplay{
   height: 100%;
   width: 100vw;
+  overflow: hidden;
   background: black;
   display: flex;
+  flex-wrap: nowrap;
   flex-flow: row;
   justify-content: center;
   transition: transform .2s; /* Animation */
