@@ -32,21 +32,19 @@ window.loadAlbum = function(albumName)
         $(".galleryImages").html( html );
         $("img").on("click",function(event){
           //get element index then * 100vw
-          console.log($(this).index());
           console.log($('img').index(this));
-          showImage(event.target,imgDisplayHtml);
+          showImage($('img').index(this),imgDisplayHtml);
         })
 
     }, function(error){alert(error);});
 };
 }
 
-function showImage(currentImg,html){
+function showImage(index,html){
 
 $(".galleryImages").html( "" );
 $(".galleryImages").html('<div class="imgDisplay">' + html + '</div>' );
-console.log($(window).width());
-$(".imgDisplay").scrollLeft($(window).width());
+$(".imgDisplay").scrollLeft($(window).width()*index);
 localStorage.setItem("lastPage",".galleryWrapper");
 localStorage.setItem("currentPage",".imgWrapper");
 
