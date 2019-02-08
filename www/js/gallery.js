@@ -31,6 +31,8 @@ window.loadAlbum = function(albumName)
 
         $(".galleryImages").html( html );
         $("img").on("click",function(){
+          //get element index then * 100vw
+
           showImage($(this),imgDisplayHtml);
         })
 
@@ -42,6 +44,7 @@ function showImage(currentImg,html){
 
 $(".galleryImages").html( "" );
 $(".galleryImages").html('<div class="imgDisplay">' + html + '</div>' );
+console.log(currentImg.position().left);
 $(".gallerImages").scrollLeft(currentImg.position().left);
 localStorage.setItem("lastPage",".galleryWrapper");
 localStorage.setItem("currentPage",".imgWrapper");
