@@ -227,12 +227,12 @@ margin-bottom: 2px;
   width: 100vw;
   background: black;
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   justify-content: center;
   transition: transform .2s; /* Animation */
   align-items: center;
 }
-.imgDisplay img {max-width:100%; height:auto}
+.imgDisplay img {min-width:100%; height:auto}
 .texts{
   height: 100%;
   overflow-y: auto;
