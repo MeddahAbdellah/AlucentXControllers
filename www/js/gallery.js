@@ -41,7 +41,7 @@ window.loadAlbum = function(albumName)
 function showImage(currentImg,html){
 
 $(".galleryImages").html( "" );
-$(".galleryImages").html( html );
+$(".galleryImages").html('<div class="imgDisplay">' + html + '</div>' );
 $(".gallerImages").scrollLeft(currentImg.position().left);
 localStorage.setItem("lastPage",".galleryWrapper");
 localStorage.setItem("currentPage",".imgWrapper");
