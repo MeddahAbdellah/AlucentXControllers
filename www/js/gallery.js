@@ -44,8 +44,9 @@ function showImage(currentImg,html){
 
 $(".galleryImages").html( "" );
 $(".galleryImages").html('<div class="imgDisplay">' + html + '</div>' );
-console.log(currentImg);
-console.log($(currentImg).position().left);
+console.log($(currentImg).index);
+console.log($(currentImg).position());
+console.log($(currentImg).offset());
 $(".gallerImages").scrollLeft(currentImg.position().left);
 localStorage.setItem("lastPage",".galleryWrapper");
 localStorage.setItem("currentPage",".imgWrapper");
