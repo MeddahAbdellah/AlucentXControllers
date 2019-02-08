@@ -50,13 +50,13 @@ function startBLE() {
 }
 
 function collectDataWhenConnected(BleDevice){
-  console.log(bytesToString(BleDevice.advertising));
+  //console.log(bytesToString(BleDevice.advertising));
   ble.startNotification(connectedDevice.id, service_uuid,characteristic_uuid,function(dataRead){readBLEsuccess(dataRead)},readBLEfail(connectedDevice));
        //dataReader = setInterval(readBLE,10);
 
 }
 function readBLE(){
-console.log(connectedDevice.id);
+//console.log(connectedDevice.id);
 ble.read(connectedDevice.id, service_uuid,characteristic_uuid,function(dataRead){readBLEsuccess(dataRead)},readBLEfail(connectedDevice));
 
 }
@@ -68,7 +68,7 @@ function writeBLE(data){
 }
 
 function readBLEsuccess(dataRead){
-  console.log("read called");
+  //console.log("read called");
   showData(bytesToString(dataRead));
 }
 
@@ -179,7 +179,7 @@ function showData(data){
   handleCursor(x2,y2,touch2,".cursor2");
 }
 function calibrate(y){
-  console.log(y);
+  //console.log(y);
   if(y<(parseFloat($("body").height())-(parseFloat($(".galleryHeader").height())+parseFloat($("input[name='phoneSmsInput']").height()))))return (y*(parseFloat($(".smsKeyBoard").height())+parseFloat($("input[name='smsInput']").height())+20)/(parseFloat($("body").height())-(parseFloat($(".galleryHeader").height())+parseFloat($("input[name='phoneSmsInput']").height()))));
   else return y;
 }
@@ -193,11 +193,11 @@ function toggleScreenLight(touch){
   $(".lockScreen").toggle();
   $(".lockScreen").css({position:"absolute"});
   if(touch == 0 && lastTouch1==4 /*&& !(lastTouch1==4 && lastTouch2==4) && (lastTouch1==4 || lastTouch2=4)*/){
-    console.log("turning Off");
+    //console.log("turning Off");
   //adb shell input keyevent 82 && adb shell input keyevent 66
   window.ShellExec.exec('input keyevent 223', function(res){
-  console.log('exit status: ' + res.exitStatus);
-  console.log('cmd output: ' + res.output);
+  //console.log('exit status: ' + res.exitStatus);
+  //console.log('cmd output: ' + res.output);
   /*window.ShellExec.exec('input keyevent 82', function(res){
   console.log('exit status: ' + res.exitStatus)
   console.log('cmd output: ' + res.output)
@@ -217,8 +217,8 @@ function moveClick(x,y,touch,cursor){
   if(touch=="0" && lastTouch=="1"){$(cursor).addClass("clickBackground");click(cursor);}
   else if(touch=="2" && callActive){console.log("stoping call");
   window.ShellExec.exec('input keyevent KEYCODE_ENDCALL', function(res){
-  console.log('exit status: ' + res.exitStatus)
-  console.log('cmd output: ' + res.output)
+  //console.log('exit status: ' + res.exitStatus)
+  //console.log('cmd output: ' + res.output)
   });
   callActive=false;}
   else if(touch=="3"){}
@@ -247,7 +247,7 @@ function moveScrollZoomClick(x,y,touch,cursor){
   else if(cursor===".cursor2"){
     lastTouch2=touch;
   }
-  console.log("before Condition : "+touch+ "and "+ lastTouch );
+  //console.log("before Condition : "+touch+ "and "+ lastTouch );
   if(touch=="0" && lastTouch=="1"){
     $(cursor).addClass("clickBackground");
     click(cursor);
@@ -283,7 +283,7 @@ function moveSpeakClickScroll(x,y,touch,cursor){
     click(cursor);
   }
   else if(touch=="2"){
-    console.log("clicked : " + speechRecognitionActive);
+    //console.log("clicked : " + speechRecognitionActive);
     if(speechRecognitionActive){window.plugins.speechRecognition.stopListening(function(){$(focusedInput).css("background","white");},function(){});speechRecognitionActive=false;}
     else{
       speechRecognitionActive=true;
@@ -291,10 +291,10 @@ function moveSpeakClickScroll(x,y,touch,cursor){
       window.plugins.speechRecognition.startListening(
         function (matches){
           if(speechRecognitionActive){
-          console.log(matches);
-          console.log($(focusedInput).attr("name"));
+          //console.log(matches);
+          //console.log($(focusedInput).attr("name"));
           $(focusedInput).css("background","white");
-          console.log($(focusedInput).attr("name")=='phoneSmsInput');
+          //console.log($(focusedInput).attr("name")=='phoneSmsInput');
           if((matches[0].toString().indexOf("-")>0 || matches[0].toString().indexOf(" ")>0) && $(focusedInput).attr("name")=='phoneSmsInput'){matches[0]=matches[0].replace("-","");matches[0]=matches[0].replace(" ", "");}
           if( focusedInput!==null)$(focusedInput).val(matches[0].toString());
           speechRecognitionActive=false;
@@ -320,7 +320,7 @@ function checkHits(cursor,x,y){
   var hits=null;
   if(cursor===".cursor1")hits = $(".cursorShadow1").collision("button,.fa-arrow-left,input,.galleryComponent img");
   if(cursor===".cursor2")hits = $(".cursorShadow2").collision("button,.fa-arrow-left,input,.galleryComponent img");
-  console.log(hits);
+  //console.log(hits);
   if(hits.size() >=1){
     if(hits.size()>1)hits=hits[0];
     $( cursor ).position({
@@ -365,8 +365,8 @@ function scroll(y,divToScroll,cursor){
   if(cursor==".cursor2")scrollValue+=parseInt(parseInt(y-lastY1)*5);
   if(scrollValue < 0)scrollValue = 0;
   if(scrollValue > divToScroll.prop("scrollHeight"))scrollValue = divToScroll.prop("scrollHeight");
-  console.log("scroll : "+scrollValue);
-  console.log("scroll hits : "+hits.size());
+  //console.log("scroll : "+scrollValue);
+  //console.log("scroll hits : "+hits.size());
 //  if(hits.size()>0){
     divToScroll.stop();
     divToScroll.animate({scrollTop:scrollValue});
@@ -375,14 +375,14 @@ function scroll(y,divToScroll,cursor){
 }
 
 function click(cursor)
-{ console.log("click");
+{ //console.log("click");
     if(cursor==".cursor1" && activeButton1!==null)activeButton1.click();
     else if(cursor==".cursor2" && activeButton2!==null)activeButton2.click();
     else{
     var clickPoint = $(cursor).position();
     y=clickPoint.top+($(cursor).height()/2);
     x=clickPoint.left+($(cursor).width()/2);
-    console.log("CursorX click: "+x+" CursorY click: "+y);
+    //console.log("CursorX click: "+x+" CursorY click: "+y);
     var ev = new MouseEvent('click', {
         'view': window,
         'bubbles': true,
@@ -402,7 +402,7 @@ function zoom(){
   var cursor1 = $(".cursor1").position();
   var cursor2 = $(".cursor2").position();
   var zoom = (Math.abs(cursor1.left-cursor2.left)/340)+1;
-  console.log("zooming cursor1: "+cursor1.left+" cursor2: "+cursor2.left+" zoom: "+zoom);
+  //console.log("zooming cursor1: "+cursor1.left+" cursor2: "+cursor2.left+" zoom: "+zoom);
   $(".imgDisplay").css({transform:"scale("+zoom+")"});
   }
 }
