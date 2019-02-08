@@ -230,7 +230,6 @@ margin-bottom: 2px;
   display: flex;
   flex-wrap: nowrap;
   flex-flow: row;
-  justify-content: center;
   transition: transform .2s; /* Animation */
   align-items: center;
   overflow-x: auto;
