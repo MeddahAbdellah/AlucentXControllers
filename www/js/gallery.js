@@ -29,17 +29,20 @@ window.loadAlbum = function(albumName)
 
         $(".galleryImages").html( html );
         $("img").on("click",function(){
-          showImage($(this).attr("src"));
+          showImage($(this),media);
         })
 
     }, function(error){alert(error);});
 };
 }
 
-function showImage(img){
+function showImage(currentImg,media){
+var html="";
+html += '<img src="'+media.thumbnail+'"></div>';
 
 $(".galleryImages").html( "" );
-$(".galleryImages").html( "<div class='imgDisplay'><img src="+img+"></div>" );
+$(".galleryImages").html( html );
+$(".gallerImages").scrollLeft(currentImg.position().left);
 localStorage.setItem("lastPage",".galleryWrapper");
 localStorage.setItem("currentPage",".imgWrapper");
 
