@@ -412,17 +412,17 @@ function zoom(){
   }
 }
 function swipe(x,divToScroll,cursor){
-  swipeValue=$(window).width()*ImgIndex;
+  swipeValue=$(window).width()*imgIndex;
   if(cursor==".cursor1")swipeValue+=parseInt(parseInt(lastX1-x)*5);
   if(cursor==".cursor2")swipeValue+=parseInt(parseInt(lastX2-x)*5);
   if(swipeValue < 0)swipeValue = 0;
   if(swipeValue > $(window).width()/2 ){
-    ImgIndex++;
-    swipeValue=$(window).width()*ImgIndex;
+    imgIndex++;
+    swipeValue=$(window).width()*imgIndex;
   }
   if(swipeValue < -($(window).width())/2 ){
-    ImgIndex--;
-    swipeValue=$(window).width()*ImgIndex;
+    imgIndex--;
+    swipeValue=$(window).width()*imgIndex;
   }
   if(swipeValue > divToScroll.prop("scrollWidth"))swipeValue = divToScroll.prop("scrollWidth");
   divToScroll.stop();
