@@ -283,7 +283,7 @@ function moveScrollZoomClick(x,y,touch,cursor){
     else{
     scroll(y,$(".galleryImages"),cursor);
     }
-  }else{
+  }else if(touch=="0" && (lastTouch=="4" || lastTouch=="3")){
     if(cursor===".cursor1"){
       swipe(lastX1,$(".imgDisplay"),cursor);
     }
