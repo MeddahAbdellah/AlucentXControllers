@@ -64,7 +64,7 @@ $(document).on('deviceready', function() {
 );
 
 
-CameraPreview.startCamera(options);
+CameraPreview.startCamera(cameraOptions);
 });
 
 function test(){
