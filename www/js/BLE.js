@@ -428,8 +428,8 @@ function zoom(){
 function swipe(x,divToScroll,cursor){
   swipeValue=$(window).width()*imgIndex;
   var posDifference=0;
-  if(cursor==".cursor1")posDifference=parseInt(parseInt(lastX1-x));
-  if(cursor==".cursor2")posDifference=parseInt(parseInt(lastX2-x));
+  if(cursor==".cursor1")posDifference=parseInt(parseInt(lastX1-x)*1.5);
+  if(cursor==".cursor2")posDifference=parseInt(parseInt(lastX2-x)*1.5);
 
   swipeValue+=posDifference;
 
