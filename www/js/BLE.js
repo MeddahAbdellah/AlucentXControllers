@@ -260,9 +260,12 @@ function moveScrollZoomClick(x,y,touch,cursor){
   }
   else if(touch=="2"){}
   else if(touch=="3"){
-    if(localStorage.getItem("currentPage")===".imgWrapper")zoom();
+    if(localStorage.getItem("currentPage")===".imgWrapper"){
+      if((lastTouch1==4 || lastTouch1==3) && (lastTouch2==4 || lastTouch2==3))zoom();
+      else swipe(x,$(".imgDisplay"),cursor);
+    }
     else{
-    scroll(y,$(".galleryImages"),cursor); $(cursor).addClass("holdBackground");
+    scroll(y,$(".galleryImages"),cursor);
     }
   }
   else if(touch=="4"){
@@ -425,8 +428,8 @@ function zoom(){
 function swipe(x,divToScroll,cursor){
   swipeValue=$(window).width()*imgIndex;
   var posDifference=0;
-  if(cursor==".cursor1")posDifference=parseInt(parseInt(lastX1-x)*2);
-  if(cursor==".cursor2")posDifference=parseInt(parseInt(lastX2-x)*2);
+  if(cursor==".cursor1")posDifference=parseInt(parseInt(lastX1-x));
+  if(cursor==".cursor2")posDifference=parseInt(parseInt(lastX2-x));
 
   swipeValue+=posDifference;
 
