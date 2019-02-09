@@ -18,6 +18,7 @@ var callActive=false;
 var focusedInput=null;
 var turnOffTrigger=0;
 var scrollValue=0;
+var swipeValue=0;
 var smsOptions = {
         replaceLineBreaks: false, // true to replace \n by a new line, false by default
         android: {
@@ -260,9 +261,12 @@ function moveScrollZoomClick(x,y,touch,cursor){
     }
   }
   else if(touch=="4"){
-    if(localStorage.getItem("currentPage")===".imgWrapper")zoom();
+    if(localStorage.getItem("currentPage")===".imgWrapper"){
+      if((lastTouch1==4 || lastTouch1==3) && (lastTouch2==4 || lastTouch2==3))zoom();
+      else swipe(x);
+    }
     else{
-    scroll(y,$(".galleryImages"),cursor); $(cursor).addClass("holdBackground");
+    scroll(y,$(".galleryImages"),cursor);
     }
   }
   else $(cursor).removeClass("clickBackground");
@@ -358,21 +362,7 @@ function checkHits(cursor,x,y){
 }
 
 }
-function scroll(y,divToScroll,cursor){
 
-  var hits = $(cursor).collision(".texts,.messageRecieved,.messageSent,.galleryImages,.galleryComponent,.imgDescription");
-  if(cursor==".cursor1")scrollValue+=parseInt(parseInt(y-lastY1)*5);
-  if(cursor==".cursor2")scrollValue+=parseInt(parseInt(y-lastY1)*5);
-  if(scrollValue < 0)scrollValue = 0;
-  if(scrollValue > divToScroll.prop("scrollHeight"))scrollValue = divToScroll.prop("scrollHeight");
-  //console.log("scroll : "+scrollValue);
-  //console.log("scroll hits : "+hits.size());
-//  if(hits.size()>0){
-    divToScroll.stop();
-    divToScroll.animate({scrollTop:scrollValue});
-//  }
-
-}
 
 function click(cursor)
 { //console.log("click");
@@ -396,6 +386,21 @@ function click(cursor)
     if(el!==null)el.dispatchEvent(ev);
   }
 }
+function scroll(y,divToScroll,cursor){
+
+  //var hits = $(cursor).collision(".texts,.messageRecieved,.messageSent,.galleryImages,.galleryComponent,.imgDescription");
+  if(cursor==".cursor1")scrollValue+=parseInt(parseInt(y-lastY1)*5);
+  if(cursor==".cursor2")scrollValue+=parseInt(parseInt(y-lastY2)*5);
+  if(scrollValue < 0)scrollValue = 0;
+  if(scrollValue > divToScroll.prop("scrollHeight"))scrollValue = divToScroll.prop("scrollHeight");
+  //console.log("scroll : "+scrollValue);
+  //console.log("scroll hits : "+hits.size());
+//  if(hits.size()>0){
+    divToScroll.stop();
+    divToScroll.animate({scrollTop:scrollValue});
+//  }
+
+}
 
 function zoom(){
   if(lastTouch1==4 && lastTouch2==4){
@@ -406,8 +411,14 @@ function zoom(){
   $(".imgDisplay").css({transform:"scale("+zoom+")"});
   }
 }
-function swipe(){
+function swipe(x,divToScroll,cursor){
 
+  if(cursor==".cursor1")swipeValue+=parseInt(parseInt(x-lastX1)*5);
+  if(cursor==".cursor2")swipeValue+=parseInt(parseInt(x-lastX2)*5);
+  if(swipeValue < 0)swipeValue = 0;
+  if(swipeValue > divToScroll.prop("scrollWidth"))swipeValue = divToScroll.prop("scrollWidth");
+  divToScroll.stop();
+  divToScroll.animate({scrollLeft:swipeValue});
 }
 
 function getPosition(string, subString, index) {
