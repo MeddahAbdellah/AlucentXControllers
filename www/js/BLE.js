@@ -458,8 +458,11 @@ function swipe(x,divToScroll,cursor){
     imgIndex=20;
   }
   console.log("swipeValue after : "+swipeValue);
-  divToScroll.stop();
-  divToScroll.animate({scrollLeft:swipeValue});
+  //divToScroll.stop();
+  if (!$('#div1').is(':animated')) {
+    divToScroll.animate({scrollLeft:swipeValue},400);
+  }
+
 }
 
 function getPosition(string, subString, index) {
