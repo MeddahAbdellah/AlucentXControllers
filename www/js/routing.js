@@ -41,15 +41,17 @@ function hideAll(){
 }
 function shrinkAll(){
   $(".cursor1").css({"width":"20px","height":"20px"});
-  $(".cursor1").css({"fontSize":"15px"});
+  $(".cursor1").css({"fontSize":"20px"});
   $(".cursorShadow1").css({"width":"20px","height":"20px"});
   $(".cursor2").css({"width":"20px","height":"20px"});
-  $(".cursor2").css({"fontSize":"15px"});
+  $(".cursor2").css({"fontSize":"20px"});
   $(".cursorShadow2").css({"width":"20px","height":"20px"});
 }
 function growAll(){
   $(".cursor1").css({"width":"50px","height":"50px"});
+  $(".cursor1").css({"fontSize":"40px"});
   $(".cursorShadow1").css({"width":"50px","height":"50px"});
   $(".cursor2").css({"width":"50px","height":"50px"});
+  $(".cursor2").css({"fontSize":"40px"});
   $(".cursorShadow2").css({"width":"50px","height":"50px"});
 }
