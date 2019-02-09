@@ -41,8 +41,10 @@ function hideAll(){
 }
 function shrinkAll(){
   $(".cursor1").css({"width":"20px","height":"20px"});
+  $(".cursor1").css({"fontSize":"15px"});
   $(".cursorShadow1").css({"width":"20px","height":"20px"});
   $(".cursor2").css({"width":"20px","height":"20px"});
+  $(".cursor2").css({"fontSize":"15px"});
   $(".cursorShadow2").css({"width":"20px","height":"20px"});
 }
 function growAll(){
