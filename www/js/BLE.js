@@ -263,7 +263,7 @@ function moveScrollZoomClick(x,y,touch,cursor){
   else if(touch=="4"){
     if(localStorage.getItem("currentPage")===".imgWrapper"){
       if((lastTouch1==4 || lastTouch1==3) && (lastTouch2==4 || lastTouch2==3))zoom();
-      else swipe(x);
+      else swipe(x,$(".imgDisplay"),cursor);
     }
     else{
     scroll(y,$(".galleryImages"),cursor);
