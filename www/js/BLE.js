@@ -258,12 +258,13 @@ function moveScrollZoomClick(x,y,touch,cursor){
     $(cursor).addClass("clickBackground");
     click(cursor);
   }else if(touch=="1" && lastTouch="1"){
-    if((lastTouch1==4 || lastTouch1==3) && (lastTouch2==4 || lastTouch2==3))zoom();
-    else swipe(x,$(".imgDisplay"),cursor);
-  }
-  else{
-  scroll(y,$(".galleryImages"),cursor);
-  }
+      if(localStorage.getItem("currentPage")===".imgWrapper"){
+      if((lastTouch1==4 || lastTouch1==3) && (lastTouch2==4 || lastTouch2==3))zoom();
+      else swipe(x,$(".imgDisplay"),cursor);
+    }
+    else{
+    scroll(y,$(".galleryImages"),cursor);
+    }
   }
   else if(touch=="2"){}
   else if(touch=="3"){
