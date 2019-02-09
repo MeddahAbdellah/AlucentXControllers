@@ -155,6 +155,11 @@ function showData(data){
   x2=x2.toFixed(2);
   y2=y2.toFixed(2);
 
+  if(isNaN(x1))x1=0;
+  if(isNaN(x2))x2=0;
+  if(isNaN(y1))y1=0;
+  if(isNaN(y2))y2=0;
+
   if($(".smsKeyBoard").css("position")=="static"){
     y1=calibrate(y1);
     y2=calibrate(y2);
@@ -419,11 +424,11 @@ function swipe(x,divToScroll,cursor){
   console.log("lastX1-x : "+parseInt(parseInt(lastX1-x)));
   console.log("lastX2-x : "+parseInt(parseInt(lastX2-x)));
   if(swipeValue < 0)swipeValue = 0;
-  if(swipeValue > $(window).width()/2 && swipeValue > 0){
+  if(swipeValue > ($(window).width()*(imgIndex+0.5)) && swipeValue > 0){
     imgIndex++;
     swipeValue=$(window).width()*imgIndex;
   }
-  if(swipeValue < -($(window).width())/2 && swipeValue <0){
+  if(swipeValue < -($(window).width()*(imgIndex+0.5)) && swipeValue <0){
     imgIndex--;
     swipeValue=$(window).width()*imgIndex;
   }
