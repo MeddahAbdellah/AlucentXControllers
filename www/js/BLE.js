@@ -424,11 +424,13 @@ function zoom(){
 }
 function swipe(x,divToScroll,cursor){
   swipeValue=$(window).width()*imgIndex;
-  if(cursor==".cursor1")swipeValue+=parseInt(parseInt(lastX1-x)*2);
-  if(cursor==".cursor2")swipeValue+=parseInt(parseInt(lastX2-x)*2);
+  var posDifference=0;
+  if(cursor==".cursor1")posDifference=parseInt(parseInt(lastX1-x)*2);
+  if(cursor==".cursor2")posDifference=parseInt(parseInt(lastX2-x)*2);
 
+  swipeValue+=posDifference;
 
-  if(swipeValue > ($(window).width()*(imgIndex+0.5)) && swipeValue > 0){
+  if(posDifference > ($(window).width()*(0.5)) && posDifference > 0){
     imgIndex++;
     swipeValue=$(window).width()*imgIndex;
     console.log(" > > >");
@@ -436,7 +438,7 @@ function swipe(x,divToScroll,cursor){
     console.log("lastX1-x : "+parseInt(parseInt(lastX1-x))*2);
     console.log("imgIndex : "+imgIndex);
   }
-  if(swipeValue < -($(window).width()*(imgIndex+0.5)) && swipeValue <0){
+  if(posDifference < -($(window).width()*(0.5)) && posDifference <0){
     console.log(" < < <");
     console.log("swipeValue before : "+swipeValue);
     console.log("lastX1-x : "+parseInt(parseInt(lastX1-x))*2);
