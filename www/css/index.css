@@ -116,10 +116,12 @@ overflow-y: auto;
   border: none;
   padding: 0px;
   outline: none;
+  height: 60px;
+  background: transparent;
   font-size: 2em;
   font-family: helvetica;
   text-align: center;
-  color: #37474F;
+  color: #52C6FE;
 }
 .phoneCallWrapper h1{
   width: 100vw;
@@ -147,36 +149,24 @@ overflow-y: auto;
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  background:#2ECC71;
-  border: none;
-  color: white;
+  background:transparent;
+  border: 2px solid #68ceff;
+  color: #3ac7ff;
   font-size: 2em;
-  -webkit-box-shadow: -1px -1px 2px 1px rgba(0,0,0,0.47);
-  -moz-box-shadow: -1px -1px 2px 1px rgba(0,0,0,0.47);
-  box-shadow: -1px -1px 2px 1px rgba(0,0,0,0.47);
+  -webkit-box-shadow: -1px 0px 25px 2px rgba(6,163,238,0.66);
+  -moz-box-shadow: -1px 0px 25px 2px rgba(6,163,238,0.66);
+  box-shadow: -1px 0px 25px 2px rgba(6,163,238,0.66);
   transition: 0.2s;
   outline: none;
 }
 .phoneCallWrapper button{
-  background: #90A4AE;
   margin: 20px;
 }
-button[name="startCall"]{
-  background: #2ECC71;
-}
+
 button[name="delete"]{
-  background:#2ECC71;
-  color: white;
-  border: none;
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
-  -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.47);
+font-size: 1.5em;
 }
 
-button[name="delete"]:hover{
-  background: none;
-  color: #3498DB;
-}
 button[name="sms"]{
   background: #03A9F4;
 }
@@ -242,11 +232,11 @@ margin-bottom: 2px;
   width: 100vw;
   padding: 25px;
   padding-right: 20px;
-  color: grey;
+  color: #3ac7ff;
   text-decoration: none;
   font-family: helvetica;
   font-size: 1.1em;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #3ac7ff;
 }
 .imgDescription{
   position: absolute;
@@ -280,18 +270,19 @@ margin-bottom: 2px;
 }
 .speech-bubble {
 	position: relative;
-	background: #00aabb;
+	background: transparent;
 	border-radius: .4em;
+  border: 2px solid #3ac7ff;
   width: 50%;
   margin: 5px;
   margin-left:20px;
   margin-right:20px;
-  color: white;
+  color: #3ac7ff;
   padding: 2px;
   padding-left: 5px;
   font-size: 1.1em;
   font-family: helvetica;
-  background-image: linear-gradient(to top, #cfd9df 0%, #AEB6BF 100%);
+
 }
 
 .messageRecieved .speech-bubble:after {
@@ -302,7 +293,7 @@ margin-bottom: 2px;
 	width: 0;
 	height: 0;
 	border: 0.813em solid transparent;
-	border-right-color: #AEB6BF;
+	border-right-color: #3ac7ff;
 	border-left: 0;
 	margin-top: -0.812em;
 	margin-left: -0.812em;
@@ -314,7 +305,7 @@ margin-bottom: 2px;
   justify-content: flex-end;
 }
 .messageSent .speech-bubble{
-background-image: linear-gradient(to top, #5DADE2  0%, #3498DB   100%);
+
 }
 .messageSent .speech-bubble:after {
 	content: '';
@@ -324,7 +315,7 @@ background-image: linear-gradient(to top, #5DADE2  0%, #3498DB   100%);
 	width: 0;
 	height: 0;
 	border: 0.813em solid transparent;
-	border-left-color: #3498DB;
+	border-left-color: #3ac7ff;
 	border-right: 0;
   margin-top: -0.812em;
 	margin-right: -0.812em;
@@ -342,8 +333,9 @@ input[name="smsInput"],input[name="phoneSmsInput"]{
   height: auto;
   font-size: 1.1em;
   font-family: helvetica;
-  border: none;
-  background: #FBFCFC ;
+  border: 1px solid #3ac7ff;
+  background: transparent ;
+  color: #3ac7ff;
 }
 input[name="phoneSmsInput"]{
   margin: -2px;
@@ -351,14 +343,14 @@ input[name="phoneSmsInput"]{
 }
 button[name="sendSms"]{
   position: absolute;
-  color: white;
+  color: #3ac7ff;
   right: 0;
   height: 100%;
-  border: none;
-  background: grey;
+  border: 1px solid #3ac7ff;
+  background: transparent;
   top: 0;
   width: auto;
-  font-size: 0.8em;
+  font-size: 1em;
   min-width: 70px;
   border-radius: 0;
   margin-right: 2px;
@@ -373,7 +365,7 @@ button[name="sendSms"]{
   position: absolute;
   top: 100vh;
   transition: 0.5s;
-  background: #E0E0E0;
+  background: transparent;
 }
 .smsKeyBoardRow{
   width: 100%;
@@ -383,11 +375,15 @@ button[name="sendSms"]{
 }
 .smsKeyBoardRow button{
   background: white;
-  color: black;
   border-radius: 2px;
-  border:none;
   margin: 2px;
   font-family: helvetica;
+  background:transparent;
+  border: 1px solid #68ceff;
+  color: #3ac7ff;
+  -webkit-box-shadow: -1px 0px 5px 1px rgba(6,163,238,0.66);
+  -moz-box-shadow: -1px 0px 5px 1px rgba(6,163,238,0.66);
+  box-shadow: -1px 0px 5px 1px rgba(6,163,238,0.66);
   width: 10%;
   font-size: 1.1em;
   height: 32px;

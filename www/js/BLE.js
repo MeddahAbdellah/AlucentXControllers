@@ -309,7 +309,7 @@ function moveSpeakClickScroll(x,y,touch,cursor){
   }
   else if(touch=="2"){
     //console.log("clicked : " + speechRecognitionActive);
-    if(speechRecognitionActive){window.plugins.speechRecognition.stopListening(function(){$(focusedInput).css("background","white");},function(){});speechRecognitionActive=false;}
+    if(speechRecognitionActive){window.plugins.speechRecognition.stopListening(function(){$(focusedInput).css("background","transparent");},function(){});speechRecognitionActive=false;}
     else{
       speechRecognitionActive=true;
       $(focusedInput).css("background","cyan");
@@ -318,7 +318,7 @@ function moveSpeakClickScroll(x,y,touch,cursor){
           if(speechRecognitionActive){
           //console.log(matches);
           //console.log($(focusedInput).attr("name"));
-          $(focusedInput).css("background","white");
+          $(focusedInput).css("background","transparent");
           //console.log($(focusedInput).attr("name")=='phoneSmsInput');
           if((matches[0].toString().indexOf("-")>0 || matches[0].toString().indexOf(" ")>0) && $(focusedInput).attr("name")=='phoneSmsInput'){matches[0]=matches[0].replace("-","");matches[0]=matches[0].replace(" ", "");}
           if( focusedInput!==null)$(focusedInput).val(matches[0].toString());
