@@ -230,7 +230,6 @@ function moveClick(x,y,touch,cursor){
   else if(touch=="3"){}
   else if(touch=="4"){}
   else $(cursor).removeClass("clickBackground");
-  $("#cursorPosition").html("CursorX: "+x+" CursorY: "+y);
   checkHits(cursor,x,y);
   if(cursor===".cursor1"){
     lastTouch1=touch;
