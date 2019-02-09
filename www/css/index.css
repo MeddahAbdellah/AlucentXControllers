@@ -381,3 +381,6 @@ button[name="smsKeyBoardSpaceButton"]
 .lockScreen h1 span{
   font-size: 1.5em;
 }
+html, body, .ion-app, .ion-content {
+  background-color: transparent;
+}

@@ -52,5 +52,6 @@
     <plugin name="cordova-plugin-sms-receive" spec="^1.0.1" />
     <plugin name="cordova-plugin-speechrecognition" spec="^1.2.0" />
     <plugin name="cordova-plugin-shell-exec" spec="^1.0.0" />
+    <plugin name="cordova-plugin-camera-preview" spec="^0.10.0" />
     <plugin name="org.apache.cordova.shell-exec" spec="~1.0.0" />
 </widget>

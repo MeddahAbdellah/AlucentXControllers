@@ -1,5 +1,16 @@
 $(".phoneCallWrapper").css("top","100vh");
 $(".lockScreen").hide();
+let cameraOptions = {
+  x: 0,
+  y: 0,
+  width: window.screen.width,
+  height: window.screen.height,
+  camera: CameraPreview.CAMERA_DIRECTION.BACK,
+  toBack: true,
+  tapPhoto: false,
+  tapFocus: false,
+  previewDrag: false
+};
 $(document).on('deviceready', function() {
   //startTime();
   navigator.splashscreen.show();
@@ -53,7 +64,7 @@ $(document).on('deviceready', function() {
 );
 
 
-
+CameraPreview.startCamera(options);
 });
 
 function test(){
