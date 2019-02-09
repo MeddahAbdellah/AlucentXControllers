@@ -11,7 +11,7 @@ Glow Effect
 */
 
 
-@-webkit-keyframes glow {
+@-webkit-keyframes glow2 {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
@@ -19,21 +19,27 @@ Glow Effect
     text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
+@-webkit-keyframes glow1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #008fe8, 0 0 40px #008fe8, 0 0 50px #008fe8, 0 0 60px #008fe8, 0 0 70px #008fe8;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #54d9ff, 0 0 40px #54d9ff, 0 0 50px #54d9ff, 0 0 60px #54d9ff, 0 0 70px #54d9ff, 0 0 80px #54d9ff;
+  }
+}
 /*
 Glow Effect End
 */
 .cursor1,.cursor2{
 
-  font-size: 80px;
+  font-size: 40px;
   color: #fff;
   text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+
 
   width: 50px;
   height: 50px;
-  background: yellow;
+  background: transparent;
   opacity: 0.6;
   border-radius: 100%;
   position: absolute;
@@ -41,8 +47,16 @@ Glow Effect End
   transition: 0.2s;
   pointer-events: none;
 }
+.cursor1{
+  -webkit-animation: glow1 1s ease-in-out infinite alternate;
+  -moz-animation: glow1 1s ease-in-out infinite alternate;
+  animation: glow1 1s ease-in-out infinite alternate;
+}
 .cursor2{
-  background: purple;
+  background: transparent;
+  -webkit-animation: glow2 1s ease-in-out infinite alternate;
+  -moz-animation: glow2 1s ease-in-out infinite alternate;
+  animation: glow2 1s ease-in-out infinite alternate;
 }
 .clickBackground{
   background: "#F44336";
