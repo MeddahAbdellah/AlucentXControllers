@@ -10,7 +10,9 @@ html,body{
 Glow Effect
 */
 
-
+::placeholder{
+  color: #A4E1FF;
+}
 @-webkit-keyframes glow2 {
   from {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073;
@@ -168,13 +170,13 @@ font-size: 1.5em;
 }
 
 button[name="sms"]{
-  background: #03A9F4;
+
 }
 button[name="gallery"]{
-  background: #F4D03F;
+
 }
 button:hover{
-  background: #3498DB;
+
 }
 .hoveredButton{
   background: blue !important;
