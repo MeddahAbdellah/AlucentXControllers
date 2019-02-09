@@ -275,6 +275,13 @@ function moveScrollZoomClick(x,y,touch,cursor){
     else{
     scroll(y,$(".galleryImages"),cursor);
     }
+  }else{
+    if(cursor===".cursor1"){
+      swipe(lastX1,$(".imgDisplay"),cursor);
+    }
+    else if(cursor===".cursor2"){
+      swipe(lastX2,$(".imgDisplay"),cursor);
+    }
   }
 
   else $(cursor).removeClass("clickBackground");
@@ -423,18 +430,21 @@ function swipe(x,divToScroll,cursor){
   swipeValue=$(window).width()*imgIndex;
   if(cursor==".cursor1")swipeValue+=parseInt(parseInt(lastX1-x)*2);
   if(cursor==".cursor2")swipeValue+=parseInt(parseInt(lastX2-x)*2);
-  console.log("swipeValue before : "+swipeValue);
-  console.log("the cursor : "+cursor);
-  console.log("lastX1-x : "+parseInt(parseInt(lastX1-x))*2);
-  console.log("lastX2-x : "+parseInt(parseInt(lastX2-x))*2);
-  console.log("imgIndex : "+imgIndex);
-  console.log("imgIndex*width : "+$(window).width()*(imgIndex+0.5));
+
 
   if(swipeValue > ($(window).width()*(imgIndex+0.5)) && swipeValue > 0){
     imgIndex++;
     swipeValue=$(window).width()*imgIndex;
+    console.log(" > > >");
+    console.log("swipeValue before : "+swipeValue);
+    console.log("lastX1-x : "+parseInt(parseInt(lastX1-x))*2);
+    console.log("imgIndex : "+imgIndex);
   }
   if(swipeValue < -($(window).width()*(imgIndex+0.5)) && swipeValue <0){
+    console.log(" < < <");
+    console.log("swipeValue before : "+swipeValue);
+    console.log("lastX1-x : "+parseInt(parseInt(lastX1-x))*2);
+    console.log("imgIndex : "+imgIndex);
     imgIndex--;
     swipeValue=$(window).width()*imgIndex;
   }
