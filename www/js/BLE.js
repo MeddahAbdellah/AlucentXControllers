@@ -421,11 +421,12 @@ function swipe(x,divToScroll,cursor){
   if(cursor==".cursor1")swipeValue+=parseInt(parseInt(lastX1-x)*5);
   if(cursor==".cursor2")swipeValue+=parseInt(parseInt(lastX2-x)*5);
   console.log("swipeValue before : "+swipeValue);
+  console.log("the cursor : "+cursor);
   console.log("lastX1-x : "+parseInt(parseInt(lastX1-x))*5);
   console.log("lastX2-x : "+parseInt(parseInt(lastX2-x))*5);
   console.log("imgIndex : "+imgIndex);
   console.log("imgIndex*width : "+$(window).width()*(imgIndex+0.5));
-  if(swipeValue < 0)swipeValue = 0;
+
   if(swipeValue > ($(window).width()*(imgIndex+0.5)) && swipeValue > 0){
     imgIndex++;
     swipeValue=$(window).width()*imgIndex;
@@ -434,7 +435,14 @@ function swipe(x,divToScroll,cursor){
     imgIndex--;
     swipeValue=$(window).width()*imgIndex;
   }
-  if(swipeValue > divToScroll.prop("scrollWidth"))swipeValue = divToScroll.prop("scrollWidth");
+  if(swipeValue < 0){
+    swipeValue = 0;
+    imgIndex=0;
+  }
+  if(swipeValue > divToScroll.prop("scrollWidth")){
+    swipeValue = divToScroll.prop("scrollWidth");
+    imgIndex=20;
+  }
   console.log("swipeValue after : "+swipeValue);
   divToScroll.stop();
   divToScroll.animate({scrollLeft:swipeValue});
