@@ -423,6 +423,8 @@ function swipe(x,divToScroll,cursor){
   console.log("swipeValue before : "+swipeValue);
   console.log("lastX1-x : "+parseInt(parseInt(lastX1-x))*5);
   console.log("lastX2-x : "+parseInt(parseInt(lastX2-x))*5);
+  console.log("imgIndex : "+imgIndex);
+  console.log("imgIndex*width : "+$(window).width()*(imgIndex+0.5));
   if(swipeValue < 0)swipeValue = 0;
   if(swipeValue > ($(window).width()*(imgIndex+0.5)) && swipeValue > 0){
     imgIndex++;
