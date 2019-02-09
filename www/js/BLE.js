@@ -243,9 +243,11 @@ function moveScrollZoomClick(x,y,touch,cursor){
   var lastTouch=0;
   if(cursor===".cursor1"){
     lastTouch=lastTouch1;
+    swipe(lastX1,$(".imgDisplay"),cursor);
   }
   else if(cursor===".cursor2"){
     lastTouch=lastTouch2;
+    swipe(lastX2,$(".imgDisplay"),cursor);
   }
   if(cursor===".cursor1"){
     lastTouch1=touch;
@@ -274,6 +276,7 @@ function moveScrollZoomClick(x,y,touch,cursor){
     scroll(y,$(".galleryImages"),cursor);
     }
   }
+
   else $(cursor).removeClass("clickBackground");
   //$("#cursorPosition").html("CursorX: "+x+" CursorY: "+y);
   checkHits(cursor,x,y);
