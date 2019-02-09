@@ -1,3 +1,3 @@
 git add .
 git commit -m "withCamera"
-git push
+git push --set-upstream withCamera
