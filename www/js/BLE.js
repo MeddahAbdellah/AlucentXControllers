@@ -418,8 +418,10 @@ function scroll(y,divToScroll,cursor){
   //console.log("scroll : "+scrollValue);
   //console.log("scroll hits : "+hits.size());
 //  if(hits.size()>0){
-    divToScroll.stop();
-    divToScroll.animate({scrollTop:scrollValue});
+    //divToScroll.stop();
+    if (!divToScroll.is(':animated')) {
+      divToScroll.animate({scrollTop:scrollValue});
+    }
 //  }
 
 }
@@ -468,7 +470,7 @@ function swipe(x,divToScroll,cursor){
   console.log("swipeValue after : "+swipeValue);
   //divToScroll.stop();
   if (!divToScroll.is(':animated')) {
-    divToScroll.animate({scrollLeft:swipeValue},400);
+    divToScroll.animate({scrollLeft:swipeValue},700);
   }
 
 }
