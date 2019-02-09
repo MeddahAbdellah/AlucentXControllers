@@ -459,7 +459,7 @@ function swipe(x,divToScroll,cursor){
   }
   console.log("swipeValue after : "+swipeValue);
   //divToScroll.stop();
-  if (!$('#div1').is(':animated')) {
+  if (!divToScroll.is(':animated')) {
     divToScroll.animate({scrollLeft:swipeValue},400);
   }
 
