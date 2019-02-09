@@ -1,3 +1,4 @@
+var imgIndex=0;
 function initializeGallery(){
 
 galleryAPI.getAlbums(function(items)
@@ -41,7 +42,7 @@ window.loadAlbum = function(albumName)
 }
 
 function showImage(index,html){
-
+imgIndex=index;
 $(".galleryImages").html( "" );
 $(".galleryImages").html('<div class="imgDisplay">' + html + '</div>' );
 $(".imgDisplay").scrollLeft($(window).width()*index);

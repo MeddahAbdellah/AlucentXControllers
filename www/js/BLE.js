@@ -412,10 +412,18 @@ function zoom(){
   }
 }
 function swipe(x,divToScroll,cursor){
-
-  if(cursor==".cursor1")swipeValue+=parseInt(parseInt(x-lastX1)*5);
-  if(cursor==".cursor2")swipeValue+=parseInt(parseInt(x-lastX2)*5);
+  swipeValue=$(window).width()*ImgIndex;
+  if(cursor==".cursor1")swipeValue+=parseInt(parseInt(lastX1-x)*5);
+  if(cursor==".cursor2")swipeValue+=parseInt(parseInt(lastX2-x)*5);
   if(swipeValue < 0)swipeValue = 0;
+  if(swipeValue > $(window).width()/2 ){
+    ImgIndex++;
+    swipeValue=$(window).width()*ImgIndex;
+  }
+  if(swipeValue < -($(window).width())/2 ){
+    ImgIndex--;
+    swipeValue=$(window).width()*ImgIndex;
+  }
   if(swipeValue > divToScroll.prop("scrollWidth"))swipeValue = divToScroll.prop("scrollWidth");
   divToScroll.stop();
   divToScroll.animate({scrollLeft:swipeValue});
