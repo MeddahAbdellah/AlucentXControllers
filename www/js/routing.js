@@ -25,7 +25,7 @@ $("button[name='gallery']").on("click",function(){
 function onBackKeyDown(){
   hideAll();
   growAll();
-  $(".cursor").css({"width":"50px","height":"50px"});
+  $(".cursor").css({"width":"40px","height":"40px"});
   if(localStorage.getItem("currentPage") == ".imgWrapper")initializeGallery();
   $(localStorage.getItem("lastPage")).css("top","0vh");
   localStorage.setItem("currentPage",localStorage.getItem("lastPage"));
@@ -41,17 +41,13 @@ function hideAll(){
 }
 function shrinkAll(){
   $(".cursor1").css({"width":"20px","height":"20px"});
-  $(".cursor1").css({"fontSize":"20px"});
   $(".cursorShadow1").css({"width":"20px","height":"20px"});
   $(".cursor2").css({"width":"20px","height":"20px"});
-  $(".cursor2").css({"fontSize":"20px"});
   $(".cursorShadow2").css({"width":"20px","height":"20px"});
 }
 function growAll(){
-  $(".cursor1").css({"width":"50px","height":"50px"});
-  $(".cursor1").css({"fontSize":"40px"});
-  $(".cursorShadow1").css({"width":"50px","height":"50px"});
-  $(".cursor2").css({"width":"50px","height":"50px"});
-  $(".cursor2").css({"fontSize":"40px"});
-  $(".cursorShadow2").css({"width":"50px","height":"50px"});
+  $(".cursor1").css({"width":"40px","height":"40px"});
+  $(".cursorShadow1").css({"width":"40px","height":"40px"});
+  $(".cursor2").css({"width":"40px","height":"40px"});
+  $(".cursorShadow2").css({"width":"40px","height":"40px"});
 }

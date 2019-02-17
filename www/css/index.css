@@ -37,12 +37,10 @@ Glow Effect End
   font-size: 40px;
   color: #fff;
   text-align: center;
-
-
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: transparent;
-
+  opacity: 0.5;
   border-radius: 100%;
   position: absolute;
   z-index:10;
@@ -50,15 +48,12 @@ Glow Effect End
   pointer-events: none;
 }
 .cursor1{
-  -webkit-animation: glow1 1s ease-in-out infinite alternate;
-  -moz-animation: glow1 1s ease-in-out infinite alternate;
-  animation: glow1 1s ease-in-out infinite alternate;
+  background: #FFCA28;
+
 }
 .cursor2{
-  background: transparent;
-  -webkit-animation: glow2 1s ease-in-out infinite alternate;
-  -moz-animation: glow2 1s ease-in-out infinite alternate;
-  animation: glow2 1s ease-in-out infinite alternate;
+  background: #9C27B0;
+
 }
 .clickBackground{
   background: "#F44336";
