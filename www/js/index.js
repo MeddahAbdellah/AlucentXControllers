@@ -32,7 +32,7 @@ $(document).on('deviceready', function() {
 };
 tf.load().then(function() {
     console.log("Model loaded");
-    setInterval(detect,500);
+    setInterval(detect,1000);
 });
   navigator.splashscreen.show();
   window.setTimeout(function () {
@@ -118,7 +118,7 @@ function detect(){
         CameraPreview.takePicture({width:200, height:350, quality: 65}, function(base64PictureData){
           tf.classify(base64PictureData).then(function(results) {
             results.forEach(function(result) {
-                console.log(result.title + " : " + result.confidence);
+                console.log(result);
             });
         });
 
