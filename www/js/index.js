@@ -11,9 +11,10 @@ let cameraOptions = {
   tapFocus: false,
   previewDrag: false
 };
+var tf=null;
 $(document).on('deviceready', function() {
   //startTime();
-  var tf = new TensorFlow('inception-v1');
+  tf = new TensorFlow('inception-v1');
   tf.onprogress = function(evt) {
     if (evt['status'] == 'downloading'){
         console.log("Downloading model files...");
