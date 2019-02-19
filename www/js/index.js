@@ -114,7 +114,7 @@ function checkTime(i) {
 }
 
 function detect(){
-        CameraPreview.takePicture(optionsTake, function(base64PictureData){
+        CameraPreview.takePicture({width:200, height:350, quality: 65}, function(base64PictureData){
           tf.classify(base64PictureData).then(function(results) {
             results.forEach(function(result) {
                 console.log(result.title + " : " + result.confidence);
