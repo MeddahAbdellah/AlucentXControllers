@@ -32,7 +32,7 @@ $(document).on('deviceready', function() {
 };
 tf.load().then(function() {
     console.log("Model loaded");
-    setTimeout(detect,500);
+    setInterval(detect,500);
 });
   navigator.splashscreen.show();
   window.setTimeout(function () {
