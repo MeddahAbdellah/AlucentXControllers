@@ -15,7 +15,7 @@ $(document).on('deviceready', function() {
   //startTime();
   var tf = new TensorFlow('inception-v1');
   tf.onprogress = function(evt) {
-    if (evt['status'] == 'downloading')
+    if (evt['status'] == 'downloading'){
         console.log("Downloading model files...");
         console.log(evt.label);
         if (evt.detail) {
