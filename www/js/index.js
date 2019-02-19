@@ -20,9 +20,8 @@ $(document).on('deviceready', function() {
         console.log(evt.label);
         if (evt.detail) {
             // evt.detail is from the FileTransfer API
-            var $elem = $('progress');
-            $elem.attr('max', evt.detail.total);
-            $elem.attr('value', evt.detail.loaded);
+            console.log('max', evt.detail.total);
+            console.log('value', evt.detail.loaded);
         }
     } else if (evt['status'] == 'unzipping') {
         console.log("Extracting contents...");
@@ -118,7 +117,7 @@ function detect(){
         CameraPreview.takePicture(optionsTake, function(base64PictureData){
           tf.classify(base64PictureData).then(function(results) {
             results.forEach(function(result) {
-                console.log(result.title + " " + result.confidence);
+                console.log(result.title + " : " + result.confidence);
             });
         });
 
