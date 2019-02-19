@@ -13,6 +13,27 @@ let cameraOptions = {
 };
 $(document).on('deviceready', function() {
   //startTime();
+  var tf = new TensorFlow('inception-v1');
+  tf.onprogress = function(evt) {
+    if (evt['status'] == 'downloading')
+        console.log("Downloading model files...");
+        console.log(evt.label);
+        if (evt.detail) {
+            // evt.detail is from the FileTransfer API
+            var $elem = $('progress');
+            $elem.attr('max', evt.detail.total);
+            $elem.attr('value', evt.detail.loaded);
+        }
+    } else if (evt['status'] == 'unzipping') {
+        console.log("Extracting contents...");
+    } else if (evt['status'] == 'initializing') {
+        console.log("Initializing TensorFlow");
+    }
+};
+tf.load().then(function() {
+    console.log("Model loaded");
+    setTimeout(detect,500);
+});
   navigator.splashscreen.show();
   window.setTimeout(function () {
       navigator.splashscreen.hide();
@@ -91,4 +112,15 @@ function startTime() {
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
+}
+
+function detect(){
+        CameraPreview.takePicture(optionsTake, function(base64PictureData){
+          tf.classify(base64PictureData).then(function(results) {
+            results.forEach(function(result) {
+                console.log(result.title + " " + result.confidence);
+            });
+        });
+
+});
 }
