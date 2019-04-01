@@ -69,7 +69,7 @@ function writeBLE(data){
 }
 
 function readBLEsuccess(dataRead){
-  //console.log("read called");
+  console.log("read called");
   showData(bytesToString(dataRead));
 }
 
